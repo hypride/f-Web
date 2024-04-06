@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Font Download</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+        }
+
+        header {
+            background-color: #4CAF50;
+            color: #fff;
+            text-align: center;
+            padding: 20px 0;
+        }
+
+        main {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            margin-top: 50px;
+        }
+
+        .font-preview {
+            text-align: center;
+            margin-bottom: 20px;
+            width: 100%;
+        }
+
+        .preview-text {
+            font-size: 24px;
+            margin-left: 25px;
+            margin-right: 25px;
+            color: #000;
+            font-family: myFont;
+        }
+
+        .text-input {
+            width: 80%;
+            padding: 10px;
+            margin-bottom: 20px;
+            font-size: 16px;
+        }
+
+        .download-button {
+            background-color: #4CAF50;
+            border: none;
+            color: white;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 20px;
+            padding: 5px 20px;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .download-button:hover {
+            background-color: #ff8533;
+        }
+        .text-test{
+        width: 100%;
+        }
+        @font-face {
+  font-family: myFont;
+  src: url(font.ttf);
+}
+.type-test{
+display: none;
+}
+a{
+text-decoration: none;
+
+}
+    </style>
+</head>
+<body>
+    <header>
+        <h1>FSL Swasam Download</h1>
+        <p style="margin-top: -20px;">Dedicated to all my broke Designers</p>
+    </header>
+    <main>
+        <div class="font-preview">
+        <div class="text-test">
+            <p class="preview-text" id="preview-text">F^v. sFkv .FÂ izmkw t^mïv D]a</p>
+            </div>
+            <button class="download-button" onClick="myFunction()">See Font Preview</button>
+            <div class="type-test" id="type-testt">
+            <p>Type FML Malayalam to see the preview</p>
+            <input type="text" class="text-input" id="text-input" placeholder="Type your text here...">
+            </div>
+            
+        </div>
+        <div class="download-button" style="margin-top: 30px">
+            <a href="#" style="color: white;" id="download-link">Download Font</a>
+        </div>
+    </main>
+    <p style="text-align: center; margin-top: 200px;">Developed By <a href="https://t.me/hypridee" style="text-color: black:">ABRAHAM OZLAR</a></p>
+    <script>
+        var fontUrl = 'FSL-Swasam.zip';
+
+        document.getElementById('download-link').addEventListener('click', function() {
+            var link = document.createElement('a');
+            link.href = fontUrl;
+            link.download = 'FSL-Swasam';
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+        });
+
+        document.getElementById('text-input').addEventListener('input', function() {
+            var inputValue = this.value;
+            document.getElementById('preview-text').innerText = inputValue;
+        });
+    </script>
+    <script>
+function myFunction() {
+  document.getElementById("type-testt").style.display= "block";
+}
+</script>
+</body>
+</html>
