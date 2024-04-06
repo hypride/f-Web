@@ -80,6 +80,18 @@ a{
 text-decoration: none;
 
 }
+#timer {
+    font-size: 24px;
+    text-align: center;
+    margin-top: -20px;
+  }
+  .outline{
+  border: 2px solid black;
+  border-radius: 10px;
+  padding: 10px;
+  
+  }
+  
     </style>
 </head>
 <body>
@@ -99,7 +111,29 @@ text-decoration: none;
             </div>
             
         </div>
-        <div class="download-button" style="margin-top: 30px">
+        <div class="outline">
+        <h3 style="margin-top:0px">Wait 30 Seconds to Get the Password</h3>
+        <b><div id="timer"><strong>00:30</strong></div></b>
+        </div>
+
+<script>
+  var seconds = 30;
+
+  function updateTime() {
+    seconds--;
+    if (seconds < 0) {
+      clearInterval(timerInterval); // Stop the timer when it reaches 0
+      document.getElementById("timer").innerText = "7025642642"; // Change the text to "Time's Up"
+      return;
+    }
+    var formattedTime = (seconds < 10 ? "0" + seconds : seconds);
+    document.getElementById("timer").innerText = "00:" + formattedTime;
+  }
+
+  // Update the timer every second
+  var timerInterval = setInterval(updateTime, 1000);
+</script>
+        <div class="download-button" style="margin-top: 15px">
             <a href="#" style="color: white;" id="download-link">Download Font</a>
         </div>
     </main>
@@ -110,7 +144,7 @@ text-decoration: none;
         document.getElementById('download-link').addEventListener('click', function() {
             var link = document.createElement('a');
             link.href = fontUrl;
-            link.download = 'FSL-Swasam';
+            link.download = 'FSL-Swasam.zip';
             document.body.appendChild(link);
             link.click();
             document.body.removeChild(link);
